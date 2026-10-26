@@ -15,8 +15,9 @@ test('Swag-lab login test', async ({ page }) => {
    await page.locator('.product_sort_container').selectOption('hilo');
   await page.locator('.product_sort_container').selectOption('az'); */
 
-  await page.getByText('Sauce Labs Fleece Jacket').click();
-  await page.getByRole('button', {name :'Add to cart'}).click()
+ // await page.getByText('Sauce Labs Fleece Jacket').click();
+  //await page.getByRole('button', {name :'Add to cart'}).click()
+  await page.locator('[data-test="add-to-cart-sauce-labs-fleece-jacket"]').click();
   await expect(page.locator('.shopping_cart_badge')).toBeVisible();
   await expect(page.locator('.shopping_cart_badge')).toHaveText('1');
 
