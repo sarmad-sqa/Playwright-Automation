@@ -39,7 +39,7 @@ async function checkout (page){
   await page.getByRole('button',{name:'Generate PDF order'}).click();
   await page.getByRole('button',{name:'Back Home'}).click();
   await page.locator('#react-burger-menu-btn').click();
-  await page.getByRole('link',{name:'Logout'}).click();
+  await page.locator('[data-test="logout-sidebar-link"]').click();
 }
 
 
