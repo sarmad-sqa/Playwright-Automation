@@ -19,11 +19,12 @@ async function sorting (page){
 }
 
 async function selectProduct (page){
-  await page.getByText('Sauce Labs Fleece Jacket').click();
-  await page.getByRole('button', {name :'Add to cart'}).click()
+async function selectProduct(page) {
+  await page.locator('[data-test="add-to-cart-sauce-labs-fleece-jacket"]').click();
+
   await expect(page.locator('.shopping_cart_badge')).toBeVisible();
   await expect(page.locator('.shopping_cart_badge')).toHaveText('1');
-
+}
 }
 
 async function checkout (page){
